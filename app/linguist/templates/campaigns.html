@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Campaigns{% endblock %}
+
+{% block content %}
+<h1>Campaigns</h1>
+
+{% if error %}
+<article style="background-color: var(--del-color);">
+    <p>Error: {{ error }}</p>
+</article>
+{% endif %}
+
+<section>
+    <h2>All Campaigns</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Project</th>
+                <th>Active</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campaign in campaigns %}
+            <tr>
+                <td>{{ campaign.id }}</td>
+                <td>{{ campaign.name }}</td>
+                <td>{{ campaign.Project.title if campaign.Project else 'N/A' }}</td>
+                <td>{{ '✓' if campaign.active else '✗' }}</td>
+                <td>{{ campaign.created_at[:10] if campaign.created_at else 'N/A' }}</td>
+            </tr>
+            {% endfor %}
+            {% if not campaigns %}
+            <tr>
+                <td colspan="5">No campaigns found.</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Create New Campaign</h2>
+    <p><em>Coming soon - placeholder for campaign creation form</em></p>
+</section>
+{% endblock %}

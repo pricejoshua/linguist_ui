@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "db.faekdsaigvsrgpafeuve.supabase.co",
+            "driver": "PostgreSQL",
+            "name": "supabase",
+            "connectString": "postgresql://postgres.faekdsaigvsrgpafeuve:Z6Vs9f883h6jfz0u@aws-1-us-east-2.pooler.supabase.com:5432/postgres"
+        }
+    ]
+}

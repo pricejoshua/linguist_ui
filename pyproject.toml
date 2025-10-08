@@ -1,0 +1,16 @@
+[project]
+name = "linguist-ui"
+version = "0.1.0"
+description = "Linguist admin UI for WhatsApp bot"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "supabase",
+    "jinja2",
+    "python-multipart>=0.0.20",
+]
+
+[project.scripts]
+dev="uvicorn app.poc_app:fastapi_app --reload --port 5017"
